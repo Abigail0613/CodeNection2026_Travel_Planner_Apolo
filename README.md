@@ -89,8 +89,32 @@ The user flow of our app from the starting home page to all pages with main func
 
 ## Prototype
 
-UI Prototype: 
+UI Prototype: https://www.figma.com/make/FmaMwC5dhxR9XfrhCobnQs/LetsGO-prototype?t=mnQ8p6ppKkpQ3Y2J-20&fullscreen=1 
 
+Step 1: Enter your preference after creating new / joining existing plan, which include destination, date, budget and interest.  
+![Preference](./pics/preference.png)  
+  
+Step 2: Choose the flights and hotel which matches your budget. Voting occurs here for group plans.  
+![Voting](./pics/flight_and_hotel_vote.png)  
+  
+Step 3: AI summarises the preferences and generates an itinerary. Automated and manually added alerts are flagged as red, with re-plan suggestions. Itinerary can be edited manually, and comments can be added for each activity.  
+![Itinerary](./pics/itinerary_with_alert_replan.png)  
+  
+This dashboard shows all the main functions and links to each pages.  
+![Dashboard](./pics/dashboard.png)  
+  
+View your budget and log all your expenses here. For group expenses, log the spliting way to split the costs. All expenses are categorised. 
+![Budget](./pics/budget.png)  
+  
+View and add tasks here.  
+![Pending Tasks](./pics/pending_tasks.png)  
+  
+AI suggestions on destinations to visit based on preference entered. Destinations can be added directly to the itinerary.  
+![Explore](./pics/explore.png)  
+  
+You can upload your photos to the album here. For an album in a group plan, photos can be liked and saved.  
+![Album](./pics/album.png)  
+ 
 
 ## What Makes It Different
 
@@ -115,7 +139,6 @@ UI Prototype:
 |---|---|---|---|
 | **Frontend (mobile)** | React Native with Expo | Single codebase for iOS + Android mobile app | Expo Go can't run custom native modules (BLE, native payments, etc.) |
 | **Backend** | Supabase (Postgres + Auth + Storage + Edge Functions) | Postgres fits our data shape naturally (trip → members/expenses/itinerary/photos as normal foreign-key tables). | 60s function timeout. Projects pause after 7 days idle. |
-
 | **Database and Live updates** | Supabase Prostgres and Realtime | Live votes, expense logs, itinerary edits, album likes changes instantly. | It needs row-level security policies set up correctly or subscriptions silently return nothing. |
 | **AI itinerary generation, Explore suggestions & adjustments** | Google Gemini API (Flash models) via Supabase Edge Function | Free tier, no card required. Solid function-calling/structured JSON support for the itinerary/Explore screens, generous token throughput, well-documented SDK. | Free tier rate limits apply per-minute/per-day |
 | **Flights & accommodation data** | Mocked dataset, with Duffel (test mode) for flight search and hotel properties. | A genuinely live, continuously-polled pricing feed was already flagged and dropped as too costly to run |Sandbox data only, not live pricing |
