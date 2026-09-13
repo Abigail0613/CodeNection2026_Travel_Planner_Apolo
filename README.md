@@ -1,4 +1,8 @@
-# LetsGO — Project README
+# LetsGO by Apolo
+Team: Abigail Lim, Yeap Shuwei, Chang Ru Yi  
+Problem Statement: Travel Planner
+Video Presentation: https://youtu.be/bDpBLqzXStw 
+Presentation Slides: https://canva.link/5y3qqj2dd2i0m4o 
 
 ## Project Overview
 
@@ -83,7 +87,7 @@ The user flow of our app from the starting home page to all pages with main func
 ### 3. Mentor Consultation
 | Date | Mentor | Feedback Received | What Was Changed |
 |---|---|---|---|
-|13/9/2026| ||
+|13/9/2026| Janelle Tan | To add: Search Function in the explore page, and more pictures and details in itinerary. | We decided that search function in explore page will be a future extension, as it does not affect the main features of explore. The pictures and details will be added to the itinerary once it is built and connected to the AI server. |
 
 ---
 
