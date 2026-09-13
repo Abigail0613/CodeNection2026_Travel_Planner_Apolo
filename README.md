@@ -4,14 +4,19 @@
 
 ### 1. Cause / Problem
 
-Trip planning today is scattered across too many disconnected tools and channels. Booking, budgeting, and itinerary apps are single-purpose, forcing travellers to manually reconcile information across roughly five apps plus a group chat. Group coordination has no shared source of truth — preferences live in scattered conversations, decisions are hard to finalise, and ideas get lost — while attraction and itinerary information spread across many different websites makes it difficult to get the latest info and lock in a final plan. Real-world disruptions like delays, cancellations, or bad weather aren't factored into any planning tool, leaving travellers without alerts or a backup plan mid-trip. There's also no system for splitting costs fairly or tracking who's paid, which leads to lost money, unclaimed refunds, and uneven bill-splitting, and tasks/payments easily get lost in chat threads for larger groups, risking duplicated bookings or payments. Even solo travellers aren't well served: generic itineraries don't adjust to their actual budget or interests, so they end up doing the same manual piecing-together work as a group would — planning still feels messy and scattered, just for a different reason.
+Trip planning today is scattered across too many disconnected tools and channels. Booking, budgeting, and itinerary apps are single-purpose, forcing travellers to manually reconcile information across different apps plus a group chat. As preferences live in scattered conversations, decisions are hard to finalise, and ideas get lost. Attraction and itinerary information which spread across many different websites makes it difficult to get the latest info and lock in a final plan. Real-world disruptions like delays, cancellations, or bad weather aren't factored into any planning tool, leaving travellers without alerts or a backup plan mid-trip. There is also no system for splitting costs fairly or tracking who's paid, which leads to lost money, unclaimed refunds, and uneven bill-splitting, hence tasks and payments get lost easily in chats for larger groups, risking duplicated bookings or payments. Even for solo travellers, generic itineraries do not adjust to their actual budget or interests, so they end up doing the same manual piecing-together work as a group would.
 
 ### 2. Stakeholder
-- **Solo travellers** — currently stuck with generic, one-size-fits-all itineraries that don't adjust to their actual budget or interests, so they end up doing the same manual piecing-together work as a group would.
-- **Group trip organisers** — the one person who usually ends up doing all the coordinating: chasing everyone's preferences, tracking the budget, and stitching bookings together across apps. They carry most of the stress.
-- **Group members** — want a say in the plan but don't want the responsibility of running it. Their preferences often get lost in chat threads, or overridden by whoever speaks up first.
-- **Budget-conscious travellers (including students)** — need fair, accurate cost splitting and clear tracking of who's paid, since even small errors add up in a group.
-- **Travellers facing mid-trip disruptions** — flight delays, cancellations, or bad weather can derail a fixed plan, and none of the current tools step in to help re-plan on the spot.
+- **Solo travellers**:  
+These users are currently stuck with generic, one-size-fits-all itineraries that don't adjust to their actual budget or interests.
+- **Group trip organisers**:  
+The one person who usually ends up doing all the coordinating such as chasing everyone's preferences, tracking the budget, and stitching bookings together across apps.
+- **Group members**:  
+Their preferences often get lost in; chat threads, or overridden by whoever speaks up first.
+- **Budget-conscious travellers**  
+These users need a fair, accurate cost splitting or clear tracking of payment, especially within a big group.
+- **Travellers facing mid-trip disruptions**  
+Flight delays, cancellations, or bad weather can ruin a fixed plan, and none of the current tools step in to help re-plan on the spot.
 
 ### 3. Similar Apps and Why They Fall Short
 
@@ -23,19 +28,17 @@ Trip planning today is scattered across too many disconnected tools and channels
 
 ### 4. Our Solution 
 
-LetsGO is a mobile app that brings itinerary planning, budgeting, destination discovery, and group coordination into one shared data model, so a trip is planned, tracked, and adjusted in a single place instead of five. Members submit their budget, interests, and travel dates; LetsGO's AI generates flight/accommodation options and an itinerary fitting the group's (or solo traveller's) combined constraints. An Explore feed surfaces destination-specific suggestions to add straight into the itinerary, and a single dashboard shows budget health, tasks, and alerts at a glance. When something changes, the AI adjusts only the affected part of the plan. Members can also save shared or personal photos in an in-app album.
+LetsGO is a mobile app that can be used from the planning till the end of the trip. It brings itinerary planning, budgeting, destination discovery, and group coordination into one shared data model, so a trip is planned, tracked, and adjusted in a single place instead of five. Members submit their budget, interests, and travel dates, where LetsGO's AI generates flight and accommodation options and an itinerary fitting the group's (or solo traveller's) combined constraints. An Explore feed surfaces destination-specific suggestions to add straight into the itinerary, and a single dashboard shows budget health, tasks, and alerts at a glance. When something changes, the AI adjusts only the affected part of the plan. Members can also save shared or personal photos in an in-app album.
 
 **Feature set:**
 - Shared trip dashboard (budget health + pending tasks + alerts + explore, at a glance)
 - Preference intake (budget cap, interests, dates) for solo or group members
-- AI-generated flight/accommodation options and itinerary, editable manually
-- Private group voting on flight and accommodation options, results revealed simultaneously
-- AI-generated alternatives with explanation when no suitable match is found
-- Explore section: destination- and interest-based place suggestions, one-tap add to itinerary
-- Real-world alert triggers (e.g. bad weather) and manual issue flagging (e.g. flight delay)
-- AI-suggested partial itinerary adjustments (no full regeneration)
-- Expense logging with configurable cost-splitting
-- Budget thermometer: per-category visual spend tracker
+- AI-generated flight/accommodation options (with private group voting) and itinerary, editable manually
+- AI-generated alternatives with explanation when no suitable match is found (overbudget issues)
+- Explore section: destination and interest-based place suggestions, one-tap add to itinerary
+- Real-world alert triggers (weather issues) and manual issue flagging (delay / opening hours)
+- AI-suggested partial itinerary adjustments (no full regeneration which overrides planned ones)
+- Expense logging with configurable cost-splitting and a per-category visual spend tracker
 - Persistent to-do checklist for unresolved trip items
 - Shared/solo photo album with save and like functionality
 
@@ -67,20 +70,29 @@ LetsGO is a mobile app that brings itinerary planning, budgeting, destination di
 
 ### 2. Ideation Board
 
+The problems we discussed before creating our solution.
+![Problems Found](./pics/problems.png)
+
+Ideas brainstormed based on the core problems and root causes we found in existing apps.
+![Ideation Draft](./pics/ideation_draft.jpeg)
+
+The user flow of our app from the starting home page to all pages with main functions.
 ![User Flow](./pics/userflow.jpeg)
-Draft of user flow
+
 
 ### 3. Mentor Consultation
-
-
+| Date | Mentor | Feedback Received | What Was Changed |
+|---|---|---|---|
+|13/9/2026| ||
 
 ---
 
 ## Prototype
 
+UI Prototype: 
 
 
-### What Makes It Different
+## What Makes It Different
 
 | Feature | Why It's Novel / The Twist |
 |---|---|
@@ -101,25 +113,26 @@ Draft of user flow
 
 | Layer | Choice | Why | Constraints to Expect |
 |---|---|---|---|
-| **Frontend (mobile)** | React Native with Expo | Single codebase for iOS + Android satisfies the "mobile app" requirement without doubling build effort; Expo's managed workflow skips native build config, which matters for a 3-week build; large tutorial/community base for a Year 2 team. | Some limits on custom native modules — unlikely to matter here since nothing in the feature set needs deep native access. |
-| **Backend** | Firebase Cloud Functions (Node.js) | Serverless — no server to provision or manage, generous free tier, integrates directly with Firebase Auth/Firestore so there's no separate API-glue layer to write. | Cold-start latency on free tier; fine for a demo. |
-| **Database** | Firebase Firestore | Realtime listeners are a natural fit for "everyone sees the same dashboard update live" (votes, expense logs, itinerary edits, album likes) without hand-rolling websockets. NoSQL document model maps cleanly onto "one trip = one document with itinerary/budget/group/album subcollections." | Less flexible than SQL for complex joins — acceptable since the data model (trip → members/expenses/itinerary/photos) is shallow and hierarchical. |
-| **Auth** | Firebase Authentication | Email/Google sign-in out of the box, no custom auth server to build or secure. | Fine for a hackathon demo; production would want stronger session/security rule review. |
-| **Storage (photos)** | Firebase Storage | Same SDK and auth rules as the rest of the backend — no new service to learn, integrates directly with the Album feature. | Compress images on upload to stay comfortably within free-tier storage and keep upload speed reasonable during a live demo. |
-| **AI itinerary generation, Explore suggestions & adjustments** | OpenAI API (GPT-4o-mini or similar), called from a Cloud Function | Cheap per call on a free-tier/trial budget; function-calling support returns structured itinerary/place-suggestion JSON rather than free text, which both the Itinerary and Explore screens can consume directly. | Requires an API key + small budget; calls should be batched (once per generate/adjust/explore action, not per keystroke) to stay within trial credit. |
-| **Flights & accommodation data** | Mocked/seeded dataset for the demo, with Amadeus Self-Service API (free tier) as the "real" integration if time allows | A genuinely live, continuously-polled pricing feed was already flagged and dropped as too costly to run (see ideation table) — static/sample data still lets AI-matching and voting be demoed convincingly end-to-end. | Amadeus's free tier has rate limits and test-environment data (not live production prices) — stated clearly in the video/README. |
-| **Place/Explore suggestions content** | Seeded dataset per destination (name, category, description, stock image) | Keeps Explore fast and reliable to demo without depending on a live, rate-limited third-party service for the hackathon window. | Content is static per destination for the demo — real-time "trending places" would be a post-hackathon extension. |
-| **Weather alerts** | OpenWeatherMap API (free tier) | Free, simple REST call, sufficient to trigger a "bad weather" notification for the itinerary dates/location. | Free tier has a request-per-minute cap — fine since alerts only need to poll once or twice a day per trip. |
-| **Hosting/deployment** | Expo Application Services (EAS) for build/preview; Firebase project (free Spark/Blaze-as-needed plan) for backend | Lets you generate an installable build or shareable preview link without an Apple/Google developer account — meets the "must be deployable, not just local" rule cheaply. | EAS free tier has monthly build limits; enough for a hackathon demo cycle if builds are planned rather than run on every commit. |
+| **Frontend (mobile)** | React Native with Expo | Single codebase for iOS + Android mobile app | Expo Go can't run custom native modules (BLE, native payments, etc.) |
+| **Backend** | Supabase (Postgres + Auth + Storage + Edge Functions) | Postgres fits our data shape naturally (trip → members/expenses/itinerary/photos as normal foreign-key tables). | 60s function timeout. Projects pause after 7 days idle. |
+
+| **Database and Live updates** | Supabase Prostgres and Realtime | Live votes, expense logs, itinerary edits, album likes changes instantly. | It needs row-level security policies set up correctly or subscriptions silently return nothing. |
+| **AI itinerary generation, Explore suggestions & adjustments** | Google Gemini API (Flash models) via Supabase Edge Function | Free tier, no card required. Solid function-calling/structured JSON support for the itinerary/Explore screens, generous token throughput, well-documented SDK. | Free tier rate limits apply per-minute/per-day |
+| **Flights & accommodation data** | Mocked dataset, with Duffel (test mode) for flight search and hotel properties. | A genuinely live, continuously-polled pricing feed was already flagged and dropped as too costly to run |Sandbox data only, not live pricing |
+| **Weather alerts** | OpenWeatherMap API (free tier) | Simple REST call to flag bad weather on trip dates | Free tier has a request-per-minute cap |
+| **Hosting/deployment** | EAS (build/preview) |Installable build or shareable link, no Apple/Google dev account needed.| Free tier caps at 30 builds/month|
 
 ### Build Plan & Scope (3-Week Window)
 
-- **Week 1 — Foundation:** Firebase project setup (Auth, Firestore schema for trip/members/itinerary/expenses/photos), basic navigation shell in Expo, preference intake form, trip creation/join flow.
-- **Week 2 — Core features:** AI itinerary generation (seeded flight/hotel data), shared dashboard (budget health + tasks + alerts + Explore entry point), expense logging with split calculation, budget thermometer, Explore screen with seeded destination content.
-- **Week 3 — Coordination & polish:** flight/accommodation voting, manual issue flagging + AI partial-adjustment flow, weather alert integration, photo album (upload, like, shared/solo view), UI polish and bug fixing, record demo video.
+- **Week 1 — Foundation:** Supabase setup (Auth, Postgres schema with RLS policies from day one, Storage buckets, Edge Functions scaffold), navigation shell, preference intake, trip create and join. Tryout up the Gemini itinerary call and Duffel test-mode search early as these are the two external dependencies with the most integration risk, so validating them against the real schema early avoids late surprises.
+- **Week 2 — Core features:** AI itinerary generation via Gemini (using Duffel Stays test hotels + Duffel Airways test flights as the seeded data, so results look realistic rather than static mocks), shared dashboard (budget health + tasks + alerts + Explore entry point) wired to Supabase Realtime, expense logging with split calculation, budget thermometer, Explore screen with seeded destination content.
+- **Week 3 — Coordination & polish:** Flight/accommodation voting (live via Realtime), manual issue flagging and AI partial-adjustment flow through Gemini, weather alert integration via OpenWeatherMap, photo album (Storage upload, like, shared/solo view, RLS-scoped per trip), UI polish and bug fixing, plus a pass confirming RLS policies exist on every table before demo day.
 
 **Explicitly out of scope for the hackathon build:**
-- Live/continuously-polled flight and hotel pricing (mocked instead, as noted above)
-- Voting on destinations/activities/restaurants (scoped down to flight and accommodation only)
-- Peer nudge feature (dropped in ideation)
-- Push notifications outside the app (in-app alert banners only, given time constraints)
+- Live/continuously-polled flight and hotel pricing for current implementation.
+- Manually addition of voting on destinations/activities/restaurants can be added in the future.
+- One-tap notification reminder is not built here as it does not affect the usbility.
+- In-app alerts are choosen instead of push notifications outside the app
+- Even-split expenses only for this build, custom-ratio splitting is a later extension.
+- If the app scaled to more complex queries, a SQL database could be introduced.
+- iOS-first is a scope decision to reduce testing surface, not a technical limitation of the stack.
